@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EstimationModel from "./EstimationModel";
-import axios from "axios";
 import "./Main.css";
 import { Box, Button, Textarea } from "@chakra-ui/react";
 import { API_URL } from "../config";
-const sampleData = require("../respExample.json");
-const sampleEstimation = require("../respEstimationExample.json");
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 function Main({ onUpload, fileHandle, file }) {
   const navigate = useNavigate();
