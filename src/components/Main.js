@@ -4,6 +4,7 @@ import EstimationModel from "./EstimationModel";
 import axios from "axios";
 import "./Main.css";
 import { Box, Button, Textarea } from "@chakra-ui/react";
+import { API_URL } from "../config";
 const sampleData = require("../respExample.json");
 const sampleEstimation = require("../respEstimationExample.json");
 // import dotenv from 'dotenv';
@@ -26,7 +27,7 @@ function Main({ onUpload, fileHandle, file }) {
     setLoading(true);
     setModalOpen(false);
     try {
-      const response = await fetch("http://127.0.0.1:5000/audit-contract", {
+      const response = await fetch(`${API_URL}/audit-contract`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +70,7 @@ function Main({ onUpload, fileHandle, file }) {
     try {
       setLoading(true);
       try {
-        const response = await fetch("http://127.0.0.1:5000/audit-contract", {
+        const response = await fetch(`${API_URL}/audit-contract`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
