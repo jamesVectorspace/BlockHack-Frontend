@@ -124,7 +124,7 @@ function Main({ onUpload, fileHandle, file }) {
       <Button
         colorScheme="blue"
         onClick={handleFile}
-        disabled={codelines.length === 0}
+        disabled={codelines.length === 0 || isLoading}
         mt={2}
       >
         Submit
